@@ -5,18 +5,18 @@ from main import get_triangle_type
 
 class TestTriangleType(unittest.TestCase):
 
-    def equilateral(self):
+    def test_equilateral(self):
         self.assertEqual(get_triangle_type(10, 10, 10), 'equilateral')
 
-    def nonequilateral(self):
+    def test_nonequilateral(self):
         self.assertEqual(get_triangle_type(1, 2, 3), 'nonequilateral')
 
-    def isosceles(self):
+    def test_isosceles(self):
         self.assertEqual(get_triangle_type(2, 2, 1), 'isosceles')
         self.assertEqual(get_triangle_type(2, 1, 2), 'isosceles')
         self.assertEqual(get_triangle_type(1, 2, 2), 'isosceles')
 
-    def incorrect_sides(self):
+    def test_incorrect_sides(self):
         self.assertEqual(get_triangle_type(2, 2, 4), 'IncorrectTriangleSides')
         self.assertEqual(get_triangle_type(0, 0, 0), 'IncorrectTriangleSides')
         self.assertEqual(get_triangle_type(6, 8, 10), 'IncorrectTriangleSides')
